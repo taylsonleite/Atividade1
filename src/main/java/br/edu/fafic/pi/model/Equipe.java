@@ -22,7 +22,7 @@ import java.util.UUID;
                 ),
                 @NamedQuery(
                         name = "findByNamePlayer",
-                        query = "SELECT e FROM Equipe e INNER JOIN Pessoa p ON p.nome  = :nome"
+                        query = "SELECT e FROM Equipe e INNER JOIN Jogador j ON j.nome = :nome"
                 ),
                 @NamedQuery(
                         name = "findAll",

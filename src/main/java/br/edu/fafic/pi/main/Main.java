@@ -96,15 +96,10 @@ public class Main {
 
 
         // -Consultar os campeonatos que o time participa
-        //TODO: parcialmente correto. VERIFICAR
         Campeonato campeonato = equipeDAO.findChampionship(UUID.fromString("0c8820d5-07f2-4abf-b05f-e9c6bb99bb41"));
-        //List<Equipe> equipes = equipeDAO.findAll("findAll");
 
         System.out.println("");
         System.out.println(campeonato);
-//        for (Campeonato c : campeonatos) {
-//            System.out.println(c.toString());
-//        }
 
     }
 
