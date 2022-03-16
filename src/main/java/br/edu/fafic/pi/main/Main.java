@@ -38,36 +38,46 @@ public class Main {
 //
 //        Tecnico tecnico = Tecnico.builder().build();
 //        tecnico.setNome("Guardiola");
-//
+////
 //        tecnicoDAO.saveOrUpdate(tecnico);
 //
-//        Jogador jogador1 = jogadorDAO.findById(Jogador.class, UUID.fromString("13522c1a-fbfa-49fe-8021-5d377cbfe872"));
-//        Jogador jogador2 = jogadorDAO.findById(Jogador.class, UUID.fromString("5e0f6303-55ce-4574-b895-523e356a1d2b"));
-//
-//        Tecnico tecnico = tecnicoDAO.findById(Tecnico.class, UUID.fromString("d4a31da5-c43c-4e2f-9449-007592066875"));
+//        Jogador jogador1 = jogadorDAO.findById(Jogador.class, UUID.fromString("0c06224d-402a-419a-9f19-7c7da2f16ba5"));
+//        Jogador jogador2 = jogadorDAO.findById(Jogador.class, UUID.fromString("83b5bb57-9a19-42d8-80a1-2a4ac7980815"));
+////
+//        Tecnico tecnico = tecnicoDAO.findById(Tecnico.class, UUID.fromString("88773043-7fe7-48e3-b3ce-8d290f2b1da3"));
 //
 //        Equipe equipe = Equipe.builder()
 //                .jogadores(List.of(jogador1, jogador2))
 //                .tecnico(tecnico)
 //                .nome("Flamengo")
 //                .build();
-//
+////
 //        equipeDAO.saveOrUpdate(equipe);
 
-//                Campeonato campeonato = campeonatoDAO.findById(Campeonato.class,
-//                        UUID.fromString("3927c35e-d645-49ee-ae83-fb0962fc2e48"));
+//        Equipe equipe = equipeDAO.findById(Equipe.class, UUID.fromString("8f3cf099-bc7f-40e2-a258-db323c0785d2"));
+//
+//        tecnico.setEquipe(equipe);
+//        jogador1.setEquipe(equipe);
+//        jogador2.setEquipe(equipe);
+
+//        tecnicoDAO.saveOrUpdate(tecnico);
+//        jogadorDAO.saveOrUpdate(jogador1);
+//        jogadorDAO.saveOrUpdate(jogador2);
+
+        // Campeonato campeonato = campeonatoDAO.findById(Campeonato.class,
+        //UUID.fromString("0c8820d5-07f2-4abf-b05f-e9c6bb99bb41"));
 
 //        Campeonato camp = Campeonato.builder()
 //                .nome("Mundial")
 //                .build();
 //
-//        Equipe eq = equipeDAO.findById(Equipe.class, UUID.fromString("416a51a8-670c-40a6-a2ec-d81a9b76d30d"));
+        //Equipe eq = equipeDAO.findById(Equipe.class, UUID.fromString("8f3cf099-bc7f-40e2-a258-db323c0785d2"));
 //
 //        camp.setEquipes(List.of(eq));
 //        campeonatoDAO.saveOrUpdate(camp);
 
 //        eq.setCampeonato(campeonato);
-////        equipeDAO.saveOrUpdate(eq);
+//        equipeDAO.saveOrUpdate(eq);
 ////
 //        campeonato.setEquipes(List.of(eq));
 ////
@@ -87,8 +97,14 @@ public class Main {
 
         // -Consultar os campeonatos que o time participa
         //TODO: parcialmente correto. VERIFICAR
-//        List<Campeonato> campeonato = campeonatoDAO.findByTeam(UUID.fromString("416a51a8-670c-40a6-a2ec-d81a9b76d30d"));
-//        System.out.println(campeonato);
+        Campeonato campeonato = equipeDAO.findChampionship(UUID.fromString("0c8820d5-07f2-4abf-b05f-e9c6bb99bb41"));
+        //List<Equipe> equipes = equipeDAO.findAll("findAll");
+
+        System.out.println("");
+        System.out.println(campeonato);
+//        for (Campeonato c : campeonatos) {
+//            System.out.println(c.toString());
+//        }
 
     }
 

@@ -10,18 +10,29 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @NamedQueries(
         {
                 @NamedQuery(
-                        name = "findByName", query = "SELECT e FROM Equipe e WHERE nome = :nome"
+                        name = "findByName",
+                        query = "SELECT e FROM Equipe e WHERE nome = :nome"
                 ),
                 @NamedQuery(
-                        name = "findByNamePlayer", query = "SELECT e FROM Equipe e INNER JOIN Pessoa p ON p.nome  = :nome"
-                )
+                        name = "findByNamePlayer",
+                        query = "SELECT e FROM Equipe e INNER JOIN Pessoa p ON p.nome  = :nome"
+                ),
+                @NamedQuery(
+                        name = "findAll",
+                        query = "SELECT e FROM Equipe e"
+                ),
+                @NamedQuery(
+                        name = "findChampionship",
+                        query = "SELECT e.campeonato FROM Equipe e"
+                ),
+
         }
 )
 public class Equipe {
@@ -40,5 +51,12 @@ public class Equipe {
 
     @ManyToOne
     private Campeonato campeonato;
+
+    @Override
+    public String toString() {
+        return "Equipe: " + this.nome +
+                ", Jogadores: " + jogadores +
+                ", Tecnico: " + tecnico.toString();
+    }
 
 }

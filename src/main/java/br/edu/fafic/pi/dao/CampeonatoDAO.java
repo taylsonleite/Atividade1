@@ -10,7 +10,8 @@ public class CampeonatoDAO extends GenericDAOimpl<Campeonato> {
 
     public List<Campeonato> findByTeam(UUID uuid) {
         try {
-            return this.getManager().createNamedQuery("findAllTeams").setParameter("equipeUUID", uuid).getResultList();
+            return this.getManager().createNamedQuery("findAllTeams").getResultList();
+                    //.setParameter("equipeUUID", uuid).getResultList();
         } catch (javax.persistence.NoResultException e) {
             System.out.println("Equipe nao encontrada!");
             return null;

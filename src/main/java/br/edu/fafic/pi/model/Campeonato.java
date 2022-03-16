@@ -17,7 +17,7 @@ import java.util.UUID;
 @NamedQueries(
         {
                 @NamedQuery(
-                        name = "findAllTeams", query = "SELECT c FROM Campeonato c JOIN Equipe e ON e.uuid = :equipeUUID"
+                        name = "findAllTeams", query = "SELECT c FROM Campeonato c JOIN Equipe e ON e.uuid = c.uuid"
                 )
         }
 )

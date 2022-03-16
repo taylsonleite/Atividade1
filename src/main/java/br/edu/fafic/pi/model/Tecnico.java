@@ -1,19 +1,26 @@
 package br.edu.fafic.pi.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
+@Data
 @DiscriminatorValue("T")
 public class Tecnico extends Pessoa {
 
-//    @OneToOne
-//    private Equipe equipe;
+    @OneToOne
+    private Equipe equipe;
+
+    @Override
+    public String toString() {
+        return this.getNome();
+    }
 
 }

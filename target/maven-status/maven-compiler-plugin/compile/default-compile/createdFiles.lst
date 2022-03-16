@@ -1,0 +1,16 @@
+br\edu\fafic\pi\model\Pessoa.class
+br\edu\fafic\pi\model\Campeonato$CampeonatoBuilder.class
+br\edu\fafic\pi\dao\GenericDAOimpl.class
+br\edu\fafic\pi\model\Campeonato.class
+br\edu\fafic\pi\model\Tecnico$TecnicoBuilder.class
+br\edu\fafic\pi\dao\JogadorDAO.class
+br\edu\fafic\pi\model\Equipe$EquipeBuilder.class
+br\edu\fafic\pi\dao\TecnicoDAO.class
+br\edu\fafic\pi\dao\CampeonatoDAO.class
+br\edu\fafic\pi\main\Main.class
+br\edu\fafic\pi\model\Jogador$JogadorBuilder.class
+br\edu\fafic\pi\model\Tecnico.class
+br\edu\fafic\pi\model\Equipe.class
+br\edu\fafic\pi\dao\GenericDAO.class
+br\edu\fafic\pi\dao\EquipeDAO.class
+br\edu\fafic\pi\model\Jogador.class
