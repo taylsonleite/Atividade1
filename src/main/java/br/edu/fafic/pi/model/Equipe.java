@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.UUID;
                 ),
                 @NamedQuery(
                         name = "findByNamePlayer",
-                        query = "SELECT e FROM Equipe e INNER JOIN Jogador j ON j.nome = :nome"
+                        query = "SELECT e FROM Equipe e LEFT JOIN e.jogadores j WHERE j.nome = :nome"
                 ),
                 @NamedQuery(
                         name = "findAll",
@@ -31,6 +32,10 @@ import java.util.UUID;
                 @NamedQuery(
                         name = "findChampionship",
                         query = "SELECT e.campeonato FROM Equipe e"
+                ),
+                @NamedQuery(
+                        name = "findAllPlayers",
+                        query = "SELECT e.jogadores FROM Equipe e WHERE e.uuid = :uuid"
                 ),
 
         }
@@ -51,6 +56,46 @@ public class Equipe {
 
     @ManyToOne
     private Campeonato campeonato;
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<Jogador> getJogadores() {
+        return jogadores;
+    }
+
+    public void setJogadores(List<Jogador> jogadores) {
+        this.jogadores = jogadores;
+    }
+
+    public Tecnico getTecnico() {
+        return tecnico;
+    }
+
+    public void setTecnico(Tecnico tecnico) {
+        this.tecnico = tecnico;
+    }
+
+    public Campeonato getCampeonato() {
+        return campeonato;
+    }
+
+    public void setCampeonato(Campeonato campeonato) {
+        this.campeonato = campeonato;
+    }
 
     @Override
     public String toString() {

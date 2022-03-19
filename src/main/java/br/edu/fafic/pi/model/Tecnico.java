@@ -2,17 +2,22 @@ package br.edu.fafic.pi.model;
 
 import lombok.*;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Data
+//@Data
 @DiscriminatorValue("T")
+@NamedQueries(
+        {
+                @NamedQuery(
+                        name = "findChampionshipByCoach", query = "SELECT t.equipe FROM Tecnico t WHERE t.nome = :nomeTecnico"
+                )
+        }
+)
 public class Tecnico extends Pessoa {
 
     @OneToOne

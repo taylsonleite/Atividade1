@@ -1,11 +1,15 @@
 package br.edu.fafic.pi.dao;
 
+import br.edu.fafic.pi.model.Equipe;
 import br.edu.fafic.pi.model.Tecnico;
 
-import java.util.List;
-import java.util.UUID;
+public class TecnicoDAO extends GenericDAOimpl<Tecnico> {
 
-public class TecnicoDAO extends GenericDAOimpl<Tecnico>{
+    public Equipe findChampionshipByCoach(String coachName) {
+        return (Equipe) this.getManager().createNamedQuery("findChampionshipByCoach")
+                .setParameter("nomeTecnico", coachName).getSingleResult();
+    }
+
 //    @Override
 //    public void saveOrUpdate(Tecnico entity) {
 //

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.UUID;
 @NamedQueries(
         {
                 @NamedQuery(
-                        name = "findAllTeams", query = "SELECT c FROM Campeonato c JOIN Equipe e ON e.uuid = c.uuid"
+                        name = "findAllTeams", query = "SELECT c.equipes FROM Campeonato c WHERE c.nome = :nomeCampeonato"
                 )
         }
 )
